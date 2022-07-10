@@ -1,6 +1,6 @@
 
 
-#include <ESP32Servo.h>
+
 
 unsigned long now;
 unsigned long last = 0;
@@ -91,7 +91,7 @@ void loop()
   
   Serial.print("20%");
 }
-  esp_sleep_enable_ext0_wakeup(GPIO_NUM_12,HIGH);
+  sleep_enable_ext0_wakeup(GPIO_NUM_12,HIGH);
   
  
  while((last - now )> (10000))
@@ -100,7 +100,7 @@ void loop()
    now = millis();
   Serial.print("now");
   Serial.println(now);
-  esp_deep_sleep_start();
+  deep_sleep_start();
   delay(500);
  
   
